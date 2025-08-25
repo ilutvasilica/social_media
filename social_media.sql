@@ -34,3 +34,8 @@ SELECT * FROM postare;
 SELECT * FROM utilizator JOIN postare;
 SELECT * FROM postare JOIN utilizator
 ON postare.id_utilizator = utilizator.id ;
+
+SELECT u.name AS autor, COUNT(*) AS nr_postari
+FROM utilizator u, postare p
+WHERE p.id_utilizator = u.id
+GROUP BY u.name;
